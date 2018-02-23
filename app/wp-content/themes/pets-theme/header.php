@@ -7,5 +7,3 @@
   </head>
   <body>
     <h1>Pets Website</h1>
-  </body>
-</html>

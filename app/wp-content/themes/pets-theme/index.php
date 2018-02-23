@@ -1,6 +1,4 @@
-<?php
-
-get_header();
+<?php get_header();
 
 while(have_posts()) {
   # code...
@@ -12,5 +10,5 @@ while(have_posts()) {
 
   get_footer();
 
-  
+
  ?>
