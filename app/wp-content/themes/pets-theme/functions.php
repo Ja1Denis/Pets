@@ -8,3 +8,9 @@ function pets_files() {
   /*delete NULL and microtime() when you push this site live ,check this Udemy link https://goo.gl/RLkydt*/
 }
 add_action("wp_enqueue_scripts","pets_files");
+/*Enabling  title tag*/
+function pets_features(){
+   add_theme_support("title-tag");
+}
+
+add_action("after_setup_theme","pets_features");
