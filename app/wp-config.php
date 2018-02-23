@@ -80,10 +80,10 @@ $table_prefix  = 'wp_';
 define('WP_DEBUG', false);
 
 /*Increase PHP Memory Limit in WordPress*/
-define( 'WP_MEMORY_LIMIT', '500M' );
+
 
 /*Maximum execution time*/
-set_time_limit(600);
+
 
 /* That's all, stop editing! Happy blogging. */
 
