@@ -15,15 +15,7 @@
         <i class="site-header__menu-trigger fa fa-bars" aria-hidden="true"></i>
         <div class="site-header__menu group">
           <nav class="main-navigation">
-            <!-- With this we can anable dynamic menus in backend-->
-            <!--
-            <?php
-             wp_nav_menu(array(
-              'theme_location' => 'headerMenuLocation'
-
-            ));
-             ?>
-           -->
+          
            <!--If we want dynamic menus thiss <ul> we haweto delete or make comment-->
           <ul>
               <li><a href="<?php echo site_url("/about-us") ?>">About Us</a></li>
