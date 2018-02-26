@@ -16,10 +16,11 @@
           <nav class="nav-list">
             <?php
              wp_nav_menu(array(
-              'themeLocation'=> 'footerLocationOne'
+              'theme_location' => 'footerLocationOne'
 
              ));
              ?>
+
             <!--<ul>
               <li><a href="<?php echo site_url("/about-us") ?>">About Us</a></li>
               <li><a href="#">Programs</a></li>
@@ -35,7 +36,7 @@
 
             <?php
              wp_nav_menu(array(
-              'themeLocation' => 'footerLocationTwo'
+              'theme_location' => 'footerLocationTwo'
 
              ));
              ?>
