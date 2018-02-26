@@ -15,9 +15,12 @@ add_action('wp_enqueue_scripts','pets_files');
 function pets_features() {
    /*adding menu options in worpress backend*/
     register_nav_menu('headerMenuLocation', 'Header Menu Location');
+    
+  /* With this we can anable dynamic menus in backend*/
+  /*
     register_nav_menu('footerLocationOne',  'Footer Location One');
     register_nav_menu('footerLocationTwo',  'Footer Location Two');
-
+  */
 
     add_theme_support("title-tag");
 }
