@@ -31,7 +31,8 @@ get_theme_file_uri("/images/ocean.jpg"); ?>);"></div>
           </div>
        </div>
    <?php }
-   ?>
+   echo paginate_links();   ?>
+
 
 </div>
 
