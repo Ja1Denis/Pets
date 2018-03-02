@@ -13,9 +13,6 @@ add_action('wp_enqueue_scripts','pets_files');
 
 /*Enabling  title tag*/
 function pets_features() {
-   
-
-
     add_theme_support("title-tag");
 }
 
