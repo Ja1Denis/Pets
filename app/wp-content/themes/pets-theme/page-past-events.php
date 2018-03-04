@@ -15,9 +15,21 @@ get_theme_file_uri("/images/ocean.jpg"); ?>);"></div>
 
 <div class="container container--narrow page-section">
   <?php
-   $pastEvents = new WP_Query(array(
-     'post_type' => 'event'
-   ));
+  $today = date('Ymd');
+  $pastEvents = new WP_Query(array(
+     'post_type' => 'event',
+     'meta_key'=> 'event_date',
+     'orderby'=> 'meta_value_num',
+     'order'=> 'ASC',
+     'meta_query'=> array(
+       array(
+         'key'=> 'event_date',
+         'compare'=> '<',
+         'value' => $today,
+         'type'=> 'numeric'
+       )
+     )
+  ));
    while ($pastEvents->have_posts()) {
      $pastEvents->the_post(); ?>
      <div class="event-summary">
