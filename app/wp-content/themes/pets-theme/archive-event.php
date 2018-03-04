@@ -32,6 +32,8 @@ get_theme_file_uri("/images/ocean.jpg"); ?>);"></div>
      </div>
    <?php }
    echo paginate_links();   ?>
+   <hr class="section_break">
+   <p>Looking for a recap of past events?<a href="<?php echo site_url('past-events') ?>">  Check out our past events archive.</a></p>
 
 
 </div>
