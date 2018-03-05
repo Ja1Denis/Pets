@@ -20,6 +20,13 @@ add_action("after_setup_theme","pets_features");
 
 
 function pets_adjust_queries($query) {
+  if (!is_admin() AND is_post_type_archive('program') AND $query->is_main_query()) {
+
+   $query->set('orderby','title');
+   $query->set('order','ASC');
+   $query->seeet('post_per_page',-1);
+  }
+
   if (!is_admin() AND is_post_type_archive('event') AND $query->is_main_query()) {
     $today = date('Ymd');
     $query->set('meta_key','event_date');
