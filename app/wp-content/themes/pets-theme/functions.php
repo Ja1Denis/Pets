@@ -14,6 +14,8 @@ add_action('wp_enqueue_scripts','pets_files');
 /*Enabling  title tag*/
 function pets_features() {
     add_theme_support("title-tag");
+/*Enabling thumbnails*/    
+    add_theme_support("post-thumbnails");
 }
 
 add_action("after_setup_theme","pets_features");
