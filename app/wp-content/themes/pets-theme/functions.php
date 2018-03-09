@@ -14,8 +14,10 @@ add_action('wp_enqueue_scripts','pets_files');
 /*Enabling  title tag*/
 function pets_features() {
     add_theme_support("title-tag");
-/*Enabling thumbnails*/    
+/*Enabling thumbnails*/
     add_theme_support("post-thumbnails");
+    add_image_size('professorLandscape',400,260,true);
+    add_image_size('professorPortret',480,650,true);
 }
 
 add_action("after_setup_theme","pets_features");

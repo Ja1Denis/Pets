@@ -23,7 +23,7 @@ while(have_posts()) {
         <div class="row group">
 
           <div class="one-third">
-            <?php the_post_thumbnail(); ?>
+            <?php the_post_thumbnail('professorPortret'); ?>
 
           </div>
 
