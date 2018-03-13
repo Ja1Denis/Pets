@@ -2,11 +2,7 @@
   get_header();
 while(have_posts()) {
   the_post();
-  pageBanner(array (
-    'title'=> 'Hello,this is a title',
-     'photo'=> 'http://3dogmedia.com/wp-content/uploads/2016/08/120251710-632x3531.jpg'
-
-  ));
+  pageBanner();
    ?>
 
 
