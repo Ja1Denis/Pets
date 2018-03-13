@@ -4,7 +4,7 @@ while(have_posts()) {
   the_post();
   pageBanner(array (
     'title'=> 'Hello,this is a title',
-    'subtitle'=> 'Hi,this is the subtitle'
+    
   ));
    ?>
 
