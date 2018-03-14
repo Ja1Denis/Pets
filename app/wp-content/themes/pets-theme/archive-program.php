@@ -1,4 +1,4 @@
-qwe
+
 <?php
 
 get_header();
