@@ -35,8 +35,8 @@
 
          while($hompageEvents -> have_posts()) {
            $hompageEvents -> the_post();
-               get_template_part('template-parts/event');
-            };
+               get_template_part('template-parts/content','event');
+            }
         ?>
 
 
