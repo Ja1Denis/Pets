@@ -85,3 +85,11 @@ function pets_adjust_queries($query) {
   }
 }
 add_action('pre_get_posts','pets_adjust_queries');
+
+/*Function for enabling google map */
+function petMapKey($api){
+  $api['key'] = 'AIzaSyCE_3WgNuECXEGHDL3bXKnbC1s4TKsW_zw'; /*this is API*/
+  return $api;
+}
+
+add_filter('acf/fields/google_map/api','petMapKey');
