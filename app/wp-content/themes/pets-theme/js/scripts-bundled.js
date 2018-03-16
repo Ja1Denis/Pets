@@ -10348,6 +10348,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var mobileMenu = new _MobileMenu.default();
 var heroSlider = new _HeroSlider.default();
 var googleMap = new _GoogleMap.default();
+alert("This is a JavaScript message");
 
 /***/ }),
 /* 2 */
