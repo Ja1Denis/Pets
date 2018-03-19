@@ -13619,6 +13619,7 @@ function () {
     this.closeButton = (0, _jquery.default)(".search-overlay__close");
     this.searchOverlay = (0, _jquery.default)(".search-overlay");
     this.events();
+    this.isOverlayOpen = false;
   } // 2. events
 
 
@@ -13627,19 +13628,35 @@ function () {
     value: function events() {
       this.openButton.on("click", this.openOverlay.bind(this));
       this.closeButton.on("click", this.closeOverlay.bind(this));
+      (0, _jquery.default)(document).on("keydown", this.keyPressDispatcher.bind(this));
     } // 3. methods (functions,actions,..)
 
+  }, {
+    key: "keyPressDispatcher",
+    value: function keyPressDispatcher(e) {
+      if (e.keyCode == 83 && !this.isOverlayOpen) {
+        this.openOverlay();
+      }
+
+      if (e.keyCode == 27 && this.isOverlayOpen) {
+        this.closeOverlay();
+      }
+    }
   }, {
     key: "openOverlay",
     value: function openOverlay() {
       this.searchOverlay.addClass("search-overlay--active");
       (0, _jquery.default)("body").addClass("body-no-scroll");
+      console.log("Our open method just ran!");
+      this.isOverlayOpen = true;
     }
   }, {
     key: "closeOverlay",
     value: function closeOverlay() {
       this.searchOverlay.removeClass("search-overlay--active");
       (0, _jquery.default)("body").removeClass("body-no-scroll");
+      console.log("Our close method just ran!");
+      this.isOverlayOpen = false;
     }
   }]);
 
