@@ -74,7 +74,10 @@
             </div>
           </div>
 
-        <?php } wp_reset_postdata();
+        <?php } 
+
+        wp_reset_postdata();
+
        ?>
 
 
@@ -117,7 +120,9 @@
 
 
 
-<? php   get_footer();
+<?php   
+
+get_footer();
 
 
  ?>
