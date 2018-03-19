@@ -13621,6 +13621,7 @@ function () {
     this.searchField = (0, _jquery.default)("#search-term");
     this.events();
     this.isOverlayOpen = false;
+    this.typingTimer;
   } // 2. events
 
 
@@ -13630,13 +13631,16 @@ function () {
       this.openButton.on("click", this.openOverlay.bind(this));
       this.closeButton.on("click", this.closeOverlay.bind(this));
       (0, _jquery.default)(document).on("keydown", this.keyPressDispatcher.bind(this));
-      this.searchField.on("keydown", this.typingLogic);
+      this.searchField.on("keydown", this.typingLogic.bind(this));
     } // 3. methods (functions,actions,..)
 
   }, {
     key: "typingLogic",
     value: function typingLogic() {
-      alert("halo from typing logic");
+      clearTimeout(this.typingTimer);
+      this.typingTimer = setTimeout(function () {
+        console.log("This is a timeout test");
+      }, 2000);
     }
   }, {
     key: "keyPressDispatcher",
