@@ -6,6 +6,7 @@ class Search {
 		this.openButton = $(".js-search-trigger");
 		this.closeButton = $(".search-overlay__close");
 		this.searchOverlay = $(".search-overlay");
+		this.searchField =$("#search-term");
 		this.events();
 		this.isOverlayOpen = false; 
 }
@@ -15,10 +16,16 @@ class Search {
 		this.openButton.on("click", this.openOverlay.bind(this));
 		this.closeButton.on("click", this.closeOverlay.bind(this));
 		$(document).on("keydown", this.keyPressDispatcher.bind(this));
+        this.searchField.on("keydown",this.typingLogic);
+
 	}
 
 
 	// 3. methods (functions,actions,..)
+	typingLogic(){
+		alert("halo from typing logic");
+
+	}
 
 	keyPressDispatcher(e){
 		
