@@ -20,6 +20,8 @@ class Search {
 
 	openOverlay() {
 		this.searchOverlay.addClass("search-overlay--active");
+		$("body").addClass("body-no-scroll");
+
 
 		
 	}
@@ -28,6 +30,7 @@ class Search {
 	closeOverlay() {
 		
 		this.searchOverlay.removeClass("search-overlay--active");
+        $("body").removeClass("body-no-scroll");
 
 
 
