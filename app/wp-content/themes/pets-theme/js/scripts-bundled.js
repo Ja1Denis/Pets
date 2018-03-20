@@ -13661,8 +13661,9 @@ function () {
   }, {
     key: "getResults",
     value: function getResults() {
-      this.resultsDiv.html("Imagine real search results here...");
-      this.isSpinnerVisible = true;
+      _jquery.default.getJSON('http://localhost:3000/wp-json/wp/v2/posts?search=biology', function (posts) {
+        alert(posts[0].title.rendered);
+      });
     }
   }, {
     key: "keyPressDispatcher",
