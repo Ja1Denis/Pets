@@ -13661,7 +13661,7 @@ function () {
   }, {
     key: "getResults",
     value: function getResults() {
-      _jquery.default.getJSON('http://localhost:3000/wp-json/wp/v2/posts?search=biology', function (posts) {
+      _jquery.default.getJSON('http://localhost:3000/wp-json/wp/v2/posts?search=' + this.searchField.val(), function (posts) {
         alert(posts[0].title.rendered);
       });
     }
