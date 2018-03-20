@@ -13622,6 +13622,7 @@ function () {
     this.searchField = (0, _jquery.default)("#search-term");
     this.events();
     this.isOverlayOpen = false;
+    this.isSpinnerVisible = false;
     this.typingTimer;
   } // 2. events
 
@@ -13639,13 +13640,19 @@ function () {
     key: "typingLogic",
     value: function typingLogic() {
       clearTimeout(this.typingTimer);
-      this.resultsDiv.html('<div class="spinner-loader"></div>');
+
+      if (!this.isSpinnerVisible) {
+        this.resultsDiv.html('<div class="spinner-loader"></div>');
+        this.isSpinnerVisible = true;
+      }
+
       this.typingTimer = setTimeout(this.getResults.bind(this), 2000);
     }
   }, {
     key: "getResults",
     value: function getResults() {
       this.resultsDiv.html("Imagine real search results here...");
+      this.isSpinnerVisible = true;
     }
   }, {
     key: "keyPressDispatcher",
