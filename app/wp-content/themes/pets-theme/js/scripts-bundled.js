@@ -13615,6 +13615,7 @@ function () {
   function Search() {
     _classCallCheck(this, Search);
 
+    this.resultsDiv = (0, _jquery.default)("#search-overlay__results");
     this.openButton = (0, _jquery.default)(".js-search-trigger");
     this.closeButton = (0, _jquery.default)(".search-overlay__close");
     this.searchOverlay = (0, _jquery.default)(".search-overlay");
@@ -13638,9 +13639,13 @@ function () {
     key: "typingLogic",
     value: function typingLogic() {
       clearTimeout(this.typingTimer);
-      this.typingTimer = setTimeout(function () {
-        console.log("This is a timeout test");
-      }, 2000);
+      this.resultsDiv.html('<div class="spinner-loader"></div>');
+      this.typingTimer = setTimeout(this.getResults.bind(this), 2000);
+    }
+  }, {
+    key: "getResults",
+    value: function getResults() {
+      this.resultsDiv.html("Imagine real search results here...");
     }
   }, {
     key: "keyPressDispatcher",
