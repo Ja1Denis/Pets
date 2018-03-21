@@ -13664,10 +13664,8 @@ function () {
       var _this = this;
 
       _jquery.default.getJSON('http://localhost:3000/wp-json/wp/v2/posts?search=' + this.searchField.val(), function (posts) {
-        var testArray = ['red', 'orange', 'yellow', 'black'];
-
-        _this.resultsDiv.html("<!-- this are backtickcs not quotation marks-->\n            <h2 class=\"search-overlay__section-title\">General Information</h2>\n            <ul class=\"link-list min-list\">\n              ".concat(testArray.map(function (item) {
-          return "<li>".concat(item, "</li>");
+        _this.resultsDiv.html("<!-- this are backtickcs not quotation marks-->\n            <h2 class=\"search-overlay__section-title\">General Information</h2>\n            <ul class=\"link-list min-list\">\n              ".concat(posts.map(function (item) {
+          return "<li><a href=\"".concat(item.link, "\">").concat(item.title.rendered, "</a></li>");
         }).join(''), "\n            </ul>\n          \t")); //in this HTML we are using Template Literal
 
       });

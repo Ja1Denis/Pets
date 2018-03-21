@@ -50,12 +50,11 @@ class Search {
 	}
 
 	getResults(){
-		$.getJSON('http://localhost:3000/wp-json/wp/v2/posts?search=' + this.searchField.val(),posts =>{
-          var testArray = ['red','orange','yellow','black'];	
+		$.getJSON('http://localhost:3000/wp-json/wp/v2/posts?search=' + this.searchField.val(),posts =>{	
           this.resultsDiv.html(`<!-- this are backtickcs not quotation marks-->
             <h2 class="search-overlay__section-title">General Information</h2>
             <ul class="link-list min-list">
-              ${testArray.map(item => `<li>${item}</li>`).join('')}
+              ${posts.map(item => `<li><a href="${item.link}">${item.title.rendered}</a></li>`).join('')}
             </ul>
           	`);//in this HTML we are using Template Literal
 		});
