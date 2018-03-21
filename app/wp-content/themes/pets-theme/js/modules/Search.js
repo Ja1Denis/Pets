@@ -46,13 +46,12 @@ class Search {
 
 		}
 
-		
 		this.previousValue = this.searchField.val();
 	}
 
 	getResults(){
-		$.getJSON('http://localhost:3000/wp-json/wp/v2/posts?search=' + this.searchField.val(),function(posts){
-          alert(posts[0].title.rendered);
+		$.getJSON('http://localhost:3000/wp-json/wp/v2/posts?search=' + this.searchField.val(),posts =>{
+          this.resultsDiv.html('Imagine results here!');
 		});
 
 	}

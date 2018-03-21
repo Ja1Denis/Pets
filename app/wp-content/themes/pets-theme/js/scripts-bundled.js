@@ -13661,8 +13661,10 @@ function () {
   }, {
     key: "getResults",
     value: function getResults() {
+      var _this = this;
+
       _jquery.default.getJSON('http://localhost:3000/wp-json/wp/v2/posts?search=' + this.searchField.val(), function (posts) {
-        alert(posts[0].title.rendered);
+        _this.resultsDiv.html('Imagine results here!');
       });
     }
   }, {
