@@ -13663,11 +13663,13 @@ function () {
     value: function getResults() {
       var _this = this;
 
-      _jquery.default.getJSON('http://localhost:3000/wp-json/wp/v2/posts?search=' + this.searchField.val(), function (posts) {
+      _jquery.default.getJSON(petsData.root_url + '/wp-json/wp/v2/posts?search=' + this.searchField.val(), function (posts) {
         _this.resultsDiv.html("\n            <h2 class=\"search-overlay__section-title\">General Information</h2>\n            ".concat(posts.length ? '<ul class="link-list min-list">' : '<p>No General Information found here</p>', "\n              ").concat(posts.map(function (item) {
           return "<li><a href=\"".concat(item.link, "\">").concat(item.title.rendered, "</a></li>");
         }).join(''), "\n            ").concat(posts.length ? '</ul>' : '', "\n          \t")); //in this HTML we are using Template Literal
 
+
+        _this.isSpinnerVisible = false; // spinner is visible after deleting and writing new search term
       });
     }
   }, {
