@@ -51,12 +51,12 @@ class Search {
 
 	getResults(){
 		$.getJSON('http://localhost:3000/wp-json/wp/v2/posts?search=' + this.searchField.val(),posts =>{
-          this.resultsDiv.html(`
+          this.resultsDiv.html(`<!-- this are backtickcs not quotation marks-->
             <h2 class="search-overlay__section-title">General Information</h2>
-            <ul class="link-list min-list">
-              <li><a href="#">Click Me</a></li>
+            <ul class="link-list min-list	">
+              <li><a href="${posts[0].link}">${posts[0].title.rendered}</a></li>
             </ul>
-          	`);
+          	`);//in this HTML we are using Template Literal
 		});
 
 	}

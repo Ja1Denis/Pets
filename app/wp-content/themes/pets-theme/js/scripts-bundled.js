@@ -13664,7 +13664,8 @@ function () {
       var _this = this;
 
       _jquery.default.getJSON('http://localhost:3000/wp-json/wp/v2/posts?search=' + this.searchField.val(), function (posts) {
-        _this.resultsDiv.html("\n            <h2 class=\"search-overlay__section-title\">General Information</h2>\n            <ul class=\"link-list min-list\">\n              <li><a href=\"#\">Click Me</a></li>\n            </ul>\n          \t");
+        _this.resultsDiv.html("<!-- this are backtickcs not quotation marks-->\n            <h2 class=\"search-overlay__section-title\">General Information</h2>\n            <ul class=\"link-list min-list\t\">\n              <li><a href=\"".concat(posts[0].link, "\">").concat(posts[0].title.rendered, "</a></li>\n            </ul>\n          \t")); //in this HTML we are using Template Literal
+
       });
     }
   }, {
