@@ -13695,6 +13695,7 @@ function () {
       setTimeout(function () {
         return _this2.searchField.focus();
       }, 301);
+      this.searchField.val('');
       console.log("Our open method just ran!");
       this.isOverlayOpen = true;
     }
