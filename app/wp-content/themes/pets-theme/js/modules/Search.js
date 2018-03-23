@@ -64,6 +64,8 @@ class Search {
           	`);//in this HTML we are using Template Literal
           this.isSpinnerVisible = false;
 
+		},() => {
+			this.resultsDiv.html('<p>Unexpected error;please try again.</p>')
 		});
          
 	}

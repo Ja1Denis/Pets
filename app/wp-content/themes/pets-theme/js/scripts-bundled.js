@@ -13674,6 +13674,8 @@ function () {
 
 
         _this.isSpinnerVisible = false;
+      }, function () {
+        _this.resultsDiv.html('<p>Unexpected error;please try again.</p>');
       });
     }
   }, {
