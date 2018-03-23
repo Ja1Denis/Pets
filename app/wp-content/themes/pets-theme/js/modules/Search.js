@@ -51,19 +51,21 @@ class Search {
 	}
 
 	getResults(){
-		$.getJSON(petsData.root_url + '/wp-json/wp/v2/posts?search=' + this.searchField.val(),posts =>{	
-          $.getJSON(petsData.root_url + '/wp-json/wp/v2/pages?search=' + this.searchField.val(),pages => {
-            var combinedResults = posts.concat(pages);
+		$.when(
+			$.getJSON(petsData.root_url + '/wp-json/wp/v2/posts?search=' + this.searchField.val()),
+			$.getJSON(petsData.root_url + '/wp-json/wp/v2/pages?search=' + this.searchField.val())
+			).then((posts,pages) => {
+			var combinedResults = posts[0].concat(pages[0]);
             this.resultsDiv.html(`
             <h2 class="search-overlay__section-title">General Information</h2>
             ${combinedResults.length ? '<ul class="link-list min-list">' : '<p>No General Information found here</p>'}
               ${combinedResults.map(item => `<li><a href="${item.link}">${item.title.rendered}</a></li>`).join('')}
             ${combinedResults.length ? '</ul>' : ''}
           	`);//in this HTML we are using Template Literal
-          this.isSpinnerVisible = false; // spinner is visible after deleting and writing new search term
-          });
-		});
+          this.isSpinnerVisible = false;
 
+		});
+         
 	}
 
 	keyPressDispatcher(e){
