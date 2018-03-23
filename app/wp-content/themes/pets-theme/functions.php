@@ -51,7 +51,8 @@ function pets_files() {
 
   wp_localize_script('main-pets-js','petsData', array(
     
-    'root_url'=>get_site_url()
+    'root_url'=>get_site_url(),
+    
 
   )); 
 }

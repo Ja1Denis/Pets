@@ -13615,6 +13615,8 @@ function () {
   function Search() {
     _classCallCheck(this, Search);
 
+    this.addSearchHTML(); //ordering matters
+
     this.resultsDiv = (0, _jquery.default)("#search-overlay__results");
     this.openButton = (0, _jquery.default)(".js-search-trigger");
     this.closeButton = (0, _jquery.default)(".search-overlay__close");
@@ -13698,6 +13700,11 @@ function () {
       (0, _jquery.default)("body").removeClass("body-no-scroll");
       console.log("Our close method just ran!");
       this.isOverlayOpen = false;
+    }
+  }, {
+    key: "addSearchHTML",
+    value: function addSearchHTML() {
+      (0, _jquery.default)("body").append("\n\n\t\t\t           <!--code for Live Search-->\n\t\t\t<div class=\"search-overlay\">\n\t\t\t  <div class=\"search-overlay__top\">\n\t\t\t    <div class=\"container\">\n\t\t\t      <i class=\"fa fa-search search-overlay__icon\" aria-hidden=\"true\"></i>\n\n\t\t\t      <input type=\"text\" class=\"search-term\" placeholder=\"What are you looking for?\" id=\"search-term\">\n\n\t\t\t      <i class=\"fa fa-window-close search-overlay__close\" aria-hidden=\"true\"></i>\n\t\t\t      \n\t\t\t    </div>\n\t\t\t    \n\t\t\t  </div>\n\n\n\t\t\t  <div class=\"container\">\n\t\t\t    <div id=\"search-overlay__results\">\n\t\t\t      \n\t\t\t      \n\t\t\t    </div>\n\t\t\t    \n\t\t\t  </div>\n\n\t\t\t</div>\n\n\t\t\t");
     }
   }]);
 
