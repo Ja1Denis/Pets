@@ -13651,7 +13651,7 @@ function () {
             this.isSpinnerVisible = true;
           }
 
-          this.typingTimer = setTimeout(this.getResults.bind(this), 2000);
+          this.typingTimer = setTimeout(this.getResults.bind(this), 400);
         } else {
           this.resultsDiv.html('');
           this.isSpinnerVisible = false;
@@ -13688,8 +13688,13 @@ function () {
   }, {
     key: "openOverlay",
     value: function openOverlay() {
+      var _this2 = this;
+
       this.searchOverlay.addClass("search-overlay--active");
       (0, _jquery.default)("body").addClass("body-no-scroll");
+      setTimeout(function () {
+        return _this2.searchField.focus();
+      }, 301);
       console.log("Our open method just ran!");
       this.isOverlayOpen = true;
     }
